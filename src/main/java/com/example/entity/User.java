@@ -44,6 +44,8 @@ public class User {
     private LocalDateTime createdData;
 
 
+    @Transient
+    private Collection<? extends GrantedAuthority> authorities;
 
 
     @PrePersist
