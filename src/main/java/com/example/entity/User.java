@@ -1,6 +1,8 @@
 package com.example.entity;
 
 
+import com.example.entity.enums.ERrole;
+
 import javax.persistence.PrePersist;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
