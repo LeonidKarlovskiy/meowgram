@@ -1,7 +1,7 @@
-package com.example.entity;
+package com.example.demo.entity;
 
 
-import com.example.entity.enums.ERrole;
+import com.example.demo.entity.enums.ERole;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,9 +32,10 @@ public class User {
     @Column(length = 2000)
     private String password;
 
-    @ElementCollection(targetClass = ERrole.class)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn("user_id"))
-    private Set<ERrole> eRrole = new HashSet<>();
+    @ElementCollection(targetClass = ERole.class)
+    @CollectionTable(name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"))
+    private Set<ERole> roles = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user", orphanRemoval = true)
     private List<Post> posts = new ArrayList<>();
