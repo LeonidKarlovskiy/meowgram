@@ -46,6 +46,9 @@ public class User implements UserDetails {
     private LocalDateTime createdDate;
 
 
+
+
+
     @Transient
     private Collection<? extends GrantedAuthority> authorities;
 
@@ -60,6 +63,10 @@ public class User implements UserDetails {
         this.email = email;
         this.password = password;
         this.authorities = authorities;
+    }
+
+    public User() {
+
     }
 
     @PrePersist
